@@ -7,6 +7,15 @@ from unittest.mock import patch
 import updater as u
 
 def main():
+    expected='War-WindowsNoEditor_UI_Label_Materials_v6.1.pak'
+    assert u.download_filename({'Content-Disposition':f'attachment; filename="{expected}"'})==expected
+    assert u.download_filename({'Content-Disposition':"attachment; filename*=UTF-8''"+expected})==expected
+    assert u.download_filename({}) is None
+    for name in ['../mod.pak','War-WindowsNoEditor.pak','mod.exe']:
+        try: u.download_filename({'Content-Disposition':f'attachment; filename="{name}"'})
+        except ValueError: pass
+        else: raise AssertionError('Unsafe download filename accepted')
+
     assert u.version_compare('1.9','1.10') == 1
     assert u.version_compare('7.1','5.1') == -1
     assert u.version_compare(None,'1.3') is None

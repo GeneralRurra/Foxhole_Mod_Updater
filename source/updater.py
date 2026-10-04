@@ -1,11 +1,25 @@
 import hashlib, html, http.cookiejar, json, os, re, shutil, subprocess, sys, tempfile, threading, time, urllib.error, urllib.parse, urllib.request, webbrowser
 from pathlib import Path
+from email.message import Message
+from email.utils import collapse_rfc2231_value
 import tkinter as tk
 from tkinter import ttk, filedialog, messagebox, simpledialog
 
 BASE = Path(sys.executable if getattr(sys,'frozen',False) else __file__).resolve().parent
 CONFIG = BASE / 'mods.json'
 APP_VERSION='1.0.1'
+
+def download_filename(headers):
+    """Use the server's actual download filename, never its display label."""
+    disposition=Message()
+    disposition['Content-Disposition']=headers.get('Content-Disposition','')
+    name=disposition.get_filename()
+    if isinstance(name,tuple): name=collapse_rfc2231_value(name)
+    if not name: return None
+    if (Path(name).name!=name or any(c in name for c in '/\\:')
+            or not name.lower().endswith('.pak') or name.casefold()=='war-windowsnoeditor.pak'):
+        raise ValueError('Ungültiger Dateiname im Download.')
+    return name
 
 def detect_foxhole():
     roots=[]
@@ -411,6 +425,12 @@ class App:
         fd,name=tempfile.mkstemp(suffix='.pak',dir=cache); os.close(fd); dest=Path(name)
         try:
             with opener.open(url,timeout=60) as response, dest.open('wb') as f:
+                actual_name=download_filename(response.headers)
+                if actual_name:
+                    m['remote']=actual_name
+                    m['available_version']=version_of(actual_name)
+                    self.ui(lambda k=key,n=actual_name:self.tree.set(k,'remote',n))
+                    self.ui(lambda k=key,v=m['available_version']:self.tree.set(k,'available',v or 'Unbekannt'))
                 try: total=int(response.headers.get('Content-Length','0'))
                 except (ValueError,TypeError): total=0
                 self.ui(lambda k=key,t=total:self.download_progress(k,0,t))
