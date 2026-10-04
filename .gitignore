@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+source/build/
+build/
+dist/
+*.spec
+*.exe
+*.zip
+*.pak
+*.pak.*
+mods*.json
+updater.lock
+backups/
+disabled/
+cache/
+.venv/
