@@ -72,6 +72,17 @@ def main():
             assert all(b.winfo_rooty()+b.winfo_height()<=preview.winfo_rooty()+preview.winfo_height() for b in buttons)
             app.download_progress(str(old),50,100)
             assert '50%' in app.progress_text.get()
+            app.pending[str(old)]=newer
+            app.language_choice.set('English'); app.change_language(); root.update()
+            assert u.translations.LANGUAGE=='en'
+            assert app.pending[str(old)]==newer and newer.exists()
+            assert app.tree.heading('file','text')=='INSTALLED FILE'
+            assert app.tree.set(str(old),'status')=='Waiting for installation'
+            assert json.loads(u.CONFIG.read_text(encoding='utf-8'))['language']=='en'
+            assert original.read_bytes()==b'protected'
+            app.language_choice.set('Deutsch'); app.change_language(); root.update()
+            assert app.tree.heading('file','text')=='INSTALLIERTE DATEI'
+            assert app.pending[str(old)]==newer
             root.destroy()
     print('PASS: versions, downgrade block, original protection, hardlinks, toggle, replacement, backup, restore, dialogs, progress, no test bypass')
 

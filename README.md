@@ -20,6 +20,10 @@ Eine portable Windows-App zum Verwalten lokaler Foxhole-Mods. Kein separates
 Python erforderlich. Unabhängiges Community-Projekt, ohne Verbindung zu Siege Camp.
 Mods und Spieldateien sind nicht im Download enthalten.
 
+## Sprache / Language
+
+Oben rechts zwischen Deutsch und Englisch wechseln. Die Auswahl wird gespeichert. / Switch between German and English at the top right. Your choice is saved.
+
 ## Start
 
 ZIP vollständig in einen beschreibbaren Ordner entpacken und
