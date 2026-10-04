@@ -1,4 +1,12 @@
-# Foxhole Mod Updater 1.0.0
+# Foxhole Mod Updater
+
+[Deutsch](#deutsch) · [English](#english)
+
+## Deutsch
+
+Mit diesem Tool kannst du deine installierten Foxhole-Mods einfach verwalten: verfügbare Updates gesammelt installieren und Mods mit einem Klick aktivieren oder deaktivieren. So musst du bekannte Mod-Seiten nicht bei jedem Update erneut suchen.
+
+Für unterstützte kostenlose itch.io-Downloads übernimmt der Updater Download und Installation. Andere Quellen können einen manuellen Download benötigen.
 
 **[Windows-Version herunterladen](https://github.com/GeneralRurra/Foxhole_Mod_Updater/releases/latest)**
 
@@ -73,3 +81,61 @@ keine Testausnahme für die Prozessprüfung.
 `source/test_release.py` prüft Dateioperationen mit temporären Testdateien.
 Die App steht unter MIT-Lizenz, die eingebetteten Laufzeitkomponenten haben eigene
 Lizenzen in `licenses`. Spiel- und Mod-Inhalte bleiben Eigentum ihrer Rechteinhaber.
+
+
+## English
+
+Foxhole Mod Updater helps you manage your installed Foxhole mods: install available updates together and enable or disable individual mods with one click. Save your mod sources so you do not have to search for them again whenever an update is released.
+
+For supported free itch.io downloads, the updater handles downloading and installation. Other sources may require a manual download.
+
+**[Download the Windows app](https://github.com/GeneralRurra/Foxhole_Mod_Updater/releases/latest)**
+
+Download `FoxholeModUpdater-v1.0.0-Windows-x64.zip` from the release, extract the entire ZIP and run `FoxholeModUpdater.exe`. The GitHub **Code → Download ZIP** option contains the source code; the ready-to-run Windows app is provided in Releases.
+
+This is a portable Windows app. No separate Python installation is required. This independent community project is not affiliated with Siege Camp. No mods or game files are included.
+
+### Getting started
+
+Extract the ZIP to a writable folder. The app searches your Steam libraries for Foxhole. If it cannot find the game, select `Foxhole/War/Content/Paks` manually.
+
+Settings, backups and disabled mods are stored beside the EXE. Keep these data files and folders when updating or moving the app. The app interface is currently in German; this documentation is available in German and English.
+
+### Updating your mods
+
+1. Click **Alle auf Updates prüfen** (Check all for updates) to download matching supported free itch.io PAK files.
+2. Click **Alle Updates installieren** (Install all updates) to review the new files and the old files that will be replaced.
+3. Click **Updates jetzt installieren** (Install updates now) to back up old files and install the updates.
+
+Download and installation progress show the current operation. Older files of the same mod variant and identical duplicates from the same source are consolidated. Installed filenames match the downloads. Language and variant choices are respected; unfamiliar renames may require a one-time selection.
+
+Versions are read from filenames and saved installation information. Recognizably older versions are not offered as updates. Letter suffixes are ordered after the numeric version, such as 1.3a after 1.3. Without a version number, the app can only detect different file contents, which does not necessarily mean newer. Compatibility with your Foxhole version is not automatically checked.
+
+### Enabling, disabling and finding mods
+
+**Aktivieren / Deaktivieren** (Enable / Disable) reversibly moves the selected mod to the `disabled` folder or restores it to the game folder. Disabled mods are not updated. Other active copies remain separate entries.
+
+**Quellen finden** (Find sources) suggests known mod pages and opens browser searches on itch.io or Nexus Mods. Unknown sources can be assigned manually.
+
+Nexus downloads requiring login, paid content and ZIP/RAR downloads need to be downloaded through the mod page. Extract archives and use **PAK importieren** (Import PAK). The app does not bypass payment or login requirements. Installed mods are kept when a source is unavailable. Not every PAK can be reliably identified as a mod.
+
+### Backups and protection
+
+**Sicherungen verwalten** (Manage backups) shows dates, versions and sizes. Restoring a backup brings back the previous filenames and files. Existing filename conflicts are blocked. Backups can be deleted after confirmation. Keep the `backups` and `disabled` folders when moving the app.
+
+**War-WindowsNoEditor.pak is protected.** References to the original game file are also blocked. Close Foxhole before modifying mod files; there is no test-mode exception.
+
+### Requirements and local data
+
+- 64-bit Windows and a Steam installation or a manually selected Paks folder.
+- No account or API key needed for supported free itch.io downloads.
+- Network access is used for checking and downloading; browser searches open only when clicked.
+- No telemetry is sent. Mod sources and file paths are stored locally in `mods.json`.
+- Temporary downloads are removed on normal exit. Run one app instance per folder.
+- The portable EXE is not digitally signed.
+
+### Source code, tests and license
+
+The source code is in `source/updater.py`. This release was built using Python 3.11, Tkinter and PyInstaller 6.22.3. `source/build.ps1` builds the Windows EXE, and `source/test_release.py` tests file operations with temporary files.
+
+The app is licensed under MIT. Embedded runtime components have their own licenses in `licenses`. Game and mod content remains the property of its respective rights holders.
