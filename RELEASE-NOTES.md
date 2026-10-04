@@ -2,6 +2,8 @@
 
 ## Deutsch
 
+**VirusTotal: 9/71 Erkennungen am 04.10.2026, einschließlich Microsoft Defender. Ursache ungeklärt. Kein Nachweis für „virenfrei“.** [Scanbericht](https://www.virustotal.com/gui/file/83ba51bcef3d871d3e65b486e2da976692d0617d9255235d26358c509f247cf6).
+
 Verwalte deine installierten Foxhole-Mods bequem: verfügbare Updates gesammelt installieren sowie Mods mit einem Klick aktivieren und deaktivieren. Gespeicherte Quellen ersparen dir die erneute Suche nach deinen Mods.
 
 Portable Windows-Version mit automatischer Steam-Bibliothekssuche.
@@ -36,6 +38,8 @@ Keine Mods, Spieldateien, persönlichen Einstellungen, Sicherungen oder Testdate
 
 
 ## English
+
+**VirusTotal: 9/71 detections on October 4, 2026, including Microsoft Defender. Cause unresolved. This is not a “virus-free” result.** [Scan report](https://www.virustotal.com/gui/file/83ba51bcef3d871d3e65b486e2da976692d0617d9255235d26358c509f247cf6).
 
 Manage your installed Foxhole mods easily: install available updates together and enable or disable mods with one click. Saved sources mean you do not have to search for your mods again for each update.
 

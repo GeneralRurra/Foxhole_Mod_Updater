@@ -4,6 +4,8 @@
 
 ## Deutsch
 
+**Scan-Hinweis zu v1.0.0:** VirusTotal meldete am 04.10.2026 **9 von 71 Erkennungen**, einschließlich Microsoft Defender. Die Ursache ist ungeklärt; Fehlalarme sind nicht bestätigt. Diese Version wird nicht als „virenfrei“ beworben. [VirusTotal-Bericht](https://www.virustotal.com/gui/file/83ba51bcef3d871d3e65b486e2da976692d0617d9255235d26358c509f247cf6) · [Details und SHA-256](SECURITY-SCAN.md).
+
 Mit diesem Tool kannst du deine installierten Foxhole-Mods einfach verwalten: verfügbare Updates gesammelt installieren und Mods mit einem Klick aktivieren oder deaktivieren. So musst du bekannte Mod-Seiten nicht bei jedem Update erneut suchen.
 
 Für unterstützte kostenlose itch.io-Downloads übernimmt der Updater Download und Installation. Andere Quellen können einen manuellen Download benötigen.
@@ -84,6 +86,8 @@ Lizenzen in `licenses`. Spiel- und Mod-Inhalte bleiben Eigentum ihrer Rechteinha
 
 
 ## English
+
+**Scan notice for v1.0.0:** On October 4, 2026, VirusTotal reported **9 out of 71 detections**, including Microsoft Defender. The cause is unresolved; false positives have not been confirmed. This release is not advertised as “virus-free.” [VirusTotal report](https://www.virustotal.com/gui/file/83ba51bcef3d871d3e65b486e2da976692d0617d9255235d26358c509f247cf6) · [Details and SHA-256](SECURITY-SCAN.md).
 
 Foxhole Mod Updater helps you manage your installed Foxhole mods: install available updates together and enable or disable individual mods with one click. Save your mod sources so you do not have to search for them again whenever an update is released.
 
