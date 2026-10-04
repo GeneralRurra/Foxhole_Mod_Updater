@@ -12,7 +12,7 @@ Für unterstützte kostenlose itch.io-Downloads übernimmt der Updater Download 
 
 **[Windows-Version herunterladen](https://github.com/GeneralRurra/Foxhole_Mod_Updater/releases/latest)**
 
-Im Release die Datei `FoxholeModUpdater-v1.0.0-Windows-x64.zip` herunterladen,
+Im Release die Datei `FoxholeModUpdater-v1.0.1-Windows-x64.zip` herunterladen,
 vollständig entpacken und die EXE starten. Unter „Code → Download ZIP“ liegt der
 Quellcode; die startbare Windows-App befindet sich im Release.
 
@@ -94,7 +94,7 @@ For supported free itch.io downloads, the updater handles downloading and instal
 
 **[Download the Windows app](https://github.com/GeneralRurra/Foxhole_Mod_Updater/releases/latest)**
 
-Download `FoxholeModUpdater-v1.0.0-Windows-x64.zip` from the release, extract the entire ZIP and run `FoxholeModUpdater.exe`. The GitHub **Code → Download ZIP** option contains the source code; the ready-to-run Windows app is provided in Releases.
+Download `FoxholeModUpdater-v1.0.1-Windows-x64.zip` from the release, extract the entire ZIP and run `FoxholeModUpdater.exe`. The GitHub **Code → Download ZIP** option contains the source code; the ready-to-run Windows app is provided in Releases.
 
 This is a portable Windows app. No separate Python installation is required. This independent community project is not affiliated with Siege Camp. No mods or game files are included.
 
