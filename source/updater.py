@@ -5,7 +5,7 @@ from tkinter import ttk, filedialog, messagebox, simpledialog
 
 BASE = Path(sys.executable if getattr(sys,'frozen',False) else __file__).resolve().parent
 CONFIG = BASE / 'mods.json'
-APP_VERSION='1.0.0'
+APP_VERSION='1.0.1'
 
 def detect_foxhole():
     roots=[]

@@ -2,6 +2,8 @@
 
 [Deutsch](#deutsch) · [English](#english)
 
+[Buildvergleich / Build comparison: v1.0.1](BUILD-COMPARISON.md) — 3/71 EXE-Erkennungen / EXE detections; weiterhin ungeklärt / still unresolved.
+
 ## Deutsch
 
 **Scan-Hinweis zu v1.0.0:** VirusTotal meldete am 04.10.2026 **9 von 71 Erkennungen**, einschließlich Microsoft Defender. Die Ursache ist ungeklärt; Fehlalarme sind nicht bestätigt. Diese Version wird nicht als „virenfrei“ beworben. [VirusTotal-Bericht](https://www.virustotal.com/gui/file/83ba51bcef3d871d3e65b486e2da976692d0617d9255235d26358c509f247cf6) · [Details und SHA-256](SECURITY-SCAN.md).
@@ -79,7 +81,7 @@ keine Testausnahme für die Prozessprüfung.
 ## Quellcode und Build
 
 `source/updater.py` enthält den Quellcode. Python 3.11 mit Tkinter und PyInstaller
-6.22.3 wurden für diesen Build verwendet. `source/build.ps1` erstellt eine EXE.
+6.22.3 wurden für diesen Build verwendet. `source/build.ps1` erstellt ab v1.0.1 einen Programmordner mit EXE und `runtime`. Beide müssen zusammen bleiben.
 `source/test_release.py` prüft Dateioperationen mit temporären Testdateien.
 Die App steht unter MIT-Lizenz, die eingebetteten Laufzeitkomponenten haben eigene
 Lizenzen in `licenses`. Spiel- und Mod-Inhalte bleiben Eigentum ihrer Rechteinhaber.
@@ -140,6 +142,6 @@ Nexus downloads requiring login, paid content and ZIP/RAR downloads need to be d
 
 ### Source code, tests and license
 
-The source code is in `source/updater.py`. This release was built using Python 3.11, Tkinter and PyInstaller 6.22.3. `source/build.ps1` builds the Windows EXE, and `source/test_release.py` tests file operations with temporary files.
+The source code is in `source/updater.py`. This release was built using Python 3.11, Tkinter and PyInstaller 6.22.3. From v1.0.1, `source/build.ps1` builds a directory containing the Windows EXE and `runtime`; keep both together, and `source/test_release.py` tests file operations with temporary files.
 
 The app is licensed under MIT. Embedded runtime components have their own licenses in `licenses`. Game and mod content remains the property of its respective rights holders.
